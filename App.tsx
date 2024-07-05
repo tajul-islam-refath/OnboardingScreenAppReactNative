@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import Home from './src/screens/Home';
 import OnboardingScreen from './src/screens/OnBording';
-import {Text} from 'react-native';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -15,7 +15,7 @@ function App(): React.JSX.Element {
   React.useEffect(() => {
     const init = async () => {
       const appData = await AsyncStorage.getItem('isAppFirstLaunched');
-      console.log(appData);
+ 
       if (appData == 'false') {
         setIsAppFirstLaunched(false);
       } else {
@@ -26,7 +26,7 @@ function App(): React.JSX.Element {
     init();
   }, []);
 
-  console.log(isAppFirstLaunched);
+  
   return (
     <>
       {isAppFirstLaunched != null && (
